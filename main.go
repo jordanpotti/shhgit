@@ -55,7 +55,7 @@ func ProcessRepositories() {
 				repo, err := core.GetRepository(session, repositoryId)
 				if *session.Options.CheckOwner {
 					if !CheckOwner(repo) {
-						break
+						continue
 					}
 				}
 				if err != nil {
